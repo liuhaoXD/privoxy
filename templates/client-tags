@@ -1,6 +1,6 @@
 ##########################################################
 #
-# No-Such-Domain Error Output template for Privoxy.
+# client-tags template for Privoxy.
 #
 #
 # USING HTML TEMPLATES:
@@ -46,6 +46,11 @@
 #  homepage:
 #    The URL of the SourceForge ijbswa project, who maintains this
 #    software.
+#  client-request:
+#    The request and headers that the client sent.
+#  processed-request:
+#    What we would have rewritten this request to, if this had not
+#    been intercepted.
 #
 # CONDITIONAL SYMBOLS FOR THIS TEMPLATE AND THEIR DEPANDANT SYMBOLS:
 # ------------------------------------------------------------------
@@ -69,13 +74,13 @@
 <html>
 
 <head>
-  <title>Privoxy: Parse error</title>
+  <title>Available client tags - Privoxy@@my-hostname@</title>
   <meta http-equiv="Content-Style-Type" content="text/css">
   <meta http-equiv="Content-Script-Type" content="text/javascript">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="robots" content="noindex,nofollow">
   <link rel="stylesheet" type="text/css" href="@default-cgi@send-stylesheet">
-  <link rel="shortcut icon" href="@default-cgi@error-favicon.ico">
+  <link rel="shortcut icon" href="@default-cgi@favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -101,51 +106,22 @@
 <!-- if-unstable-end@ -->
 
     <tr>
-      <td class="warning">
-        <h2>Parse error</h2>
-         <p>The file you're trying to edit is not valid.  You need to fix
-           it using a text editor before you can edit it using the
-           web-based editor.</p>
-        <p>This error should only occur if you edited the file using a text
-           editor.  If you managed to take a valid file and break it this
-           badly using the web-based editor, please file a bug report!</p>
-        <p>When you've fixed the problem, you can go back into the edit
-           interface using the menu below, or by clicking <a
-           href="edit-actions-list?f=@f@">here</a>.
-        </p>
-      </td>
-    </tr>
-
-    <tr>
       <td class="box">
-        <h2>Problem description:</h2>
-        <p>@parse-error@</p>
+	<h2>Available client tags</h2>
+          <p>
+            This page shows the configured
+            <a title="Lookup client-specific-tag directive in the user-manual"
+             href="@user-manual@config.html#CLIENT-SPECIFIC-TAG">client-specific tags</a>,
+            and whether or not they are enabled for the address your request came from
+            (@client-ip-addr@):
+          </p>
+
+        @client-tags@
+
       </td>
     </tr>
 
-    <tr>
-      <td class="box">
-        <h2>The line which caused the problem:</h2>
-        <pre>@line-raw@</pre>
-      </td>
-    </tr>
-
-    <tr>
-      <td class="box">
-        <h2>The line which caused the problem, with comments removed</h2>
-        <p><code>@line-data@</code></p>
-      </td>
-    </tr>
-
-    <tr>
-      <td class="box">
-        <h2>Note</h2>
-        <p>Only the first error is reported - the file may contain other
-           errors, as well as the one reported above.</p>
-      </td>
-    </tr>
-
-    <tr>
+     <tr>
       <td class="box">
         <h2>More Privoxy:</h2>
         <ul>@menu@<li><a href="@user-manual@">Documentation</a></li></ul>

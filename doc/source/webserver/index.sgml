@@ -5,10 +5,10 @@
 <!entity history SYSTEM "history.sgml">
 <!entity copyright SYSTEM "copyright.sgml">
 <!entity license SYSTEM "license.sgml">
-<!entity p-version "3.0.24">
-<!entity p-status "stable">
-<!entity % p-not-stable "IGNORE">
-<!entity % p-stable "INCLUDE">
+<!entity p-version "3.0.25">
+<!entity p-status "beta">
+<!entity % p-not-stable "INCLUDE">
+<!entity % p-stable "IGNORE">
 <!entity  my-copy "&copy;">        <!-- kludge for docbook2man            -->
 <!entity % p-homepage "IGNORE">    <!-- toggle for webserver index.html   -->
 <!entity % p-index "IGNORE">       <!-- toggle for local doc index        -->
@@ -20,9 +20,9 @@
                 This file belongs into
                 ijbswa.sourceforge.net:/home/groups/i/ij/ijbswa/htdocs/
                 
- $Id: index.sgml,v 2.35 2016/01/21 15:56:27 fabiankeil Exp $
+ $Id: index.sgml,v 2.44 2016/05/27 15:24:13 fabiankeil Exp $
 
- Copyright (C) 2001-2009 Privoxy Developers <ijbswa-developers@lists.sourceforge.net>
+ Copyright (C) 2001-2016 Privoxy Developers <ijbswa-developers@lists.sourceforge.net>
  See LICENSE.
 
  ========================================================================
@@ -136,32 +136,14 @@
   </listitem>
   <listitem>
    <para>
-    <ulink url="https://sourceforge.net/projects/ijbswa/">The project page</ulink>
-   </para>
-  </listitem>
-  <listitem>
-   <para>
-    <ulink url="user-manual/seealso.html">Related links</ulink>
-   </para>
-  </listitem>
-  <listitem>
-   <para>
     <!-- please leave this link absolute so this file can be bundled with -->
     <!-- documentation and still used locally -->
-    <ulink url="http://www.privoxy.org/team/index.html">Pictures of the Privoxy Team</ulink>
+    <ulink url="https://www.privoxy.org/team/index.html">Pictures of the Privoxy Team</ulink>
    </para>
   </listitem>
  </itemizedlist>
 </para>
 </sect1>
-
-<!--
-<informalfigure pgwide="1">
- <ulink url="http://sourceforge.net/">
-  <inlinegraphic align="center" fileref="http://sourceforge.net/sflogo.php?group_id=11118&#38;type=1&#38;dummy=.gif"></inlinegraphic>
- </ulink>
-</informalfigure>
--->
 
 <![%p-homepage;[
 <!--   ~~~~~       New section      ~~~~~     -->
@@ -169,10 +151,10 @@
 <!-- dummy section, for spacing -->
 <title></title>
 <para>
-<!-- Mention SF per AUP -->
-Privoxy is developed on <ulink url="http://sourceforge.net/">SourceForge</ulink>.
-
-This page is also available as <ulink url="http://jvauzb4sb3bwlsnc.onion/">onion service</ulink>.
+ <subscript>
+   The Privoxy website is also available as
+   <ulink url="http://jvauzb4sb3bwlsnc.onion/">Tor onion service</ulink>.
+ </subscript>
 </para>
 ]]>
 
@@ -189,6 +171,20 @@ This page is also available as <ulink url="http://jvauzb4sb3bwlsnc.onion/">onion
   Copyright __copy 2001-2016 by Privoxy Developers
  </subscript>
 </para>
+
+<![%p-homepage;[
+<para>
+ <!--
+   The markup for the sponsor logo gets inserted into the generated
+   HTML by the dok-webserver target because the logo uses the shiny
+   new PNG format which our awesome Docbook toolchain apparently does
+   not support yet.
+  -->
+ <subscript>
+   Hosting sponsored by ChameleonJohn.
+ </subscript>
+</para>
+]]>
 
 </sect1>
  
